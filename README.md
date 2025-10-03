@@ -80,15 +80,25 @@ Navigate to http://localhost:4200/
 src/
 
 ├── app/
+
 │ ├── components/ # UI Components (TaskForm, TaskList)
+
 │ ├── models/ # Data models and TypeScript interfaces
+
 │ ├── services/ # Business logic and Firebase services
+
 │ ├── store/ # NgRx state management (actions, reducers, effects)
+
 │ ├── app.component.ts # Root application component
+
 │ ├── app.config.ts # Application configuration and providers
+
 │ └── app.routes.ts # Routing configuration
+
 ├── assets/ # Static assets (images, icons)
+
 ├── environments/ # Environment configurations
+
 └── styles/ # Global styles and themes
 
 ### 🔧 Configuration
