@@ -78,10 +78,13 @@ Navigate to http://localhost:4200/
 
 
 src/
+
 ├── app/
+
 │   ├── components/
 │   │   ├── task-form/  
 │   │   └── task-list/ 
+
 │   ├── models/                
 │   ├── services/              
 │   ├── store/                 
