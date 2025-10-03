@@ -33,13 +33,16 @@ A modern, responsive Todo List application built with Angular, Angular Material,
 ## ⚡ Quick Start
 
 ### 1. Clone the Repository
-```bash
+
 git clone <your-repository-url>
 cd todo-list-app
-2. Install Dependencies
-bash
+
+### 2. Install Dependencies
+
 npm install
-3. Firebase Setup
+
+### 3. Firebase Setup
+
 Create Firebase Project
 Go to Firebase Console
 
@@ -66,12 +69,12 @@ export const environment = {
 };
 Create src/environments/environment.prod.ts with the same structure for production.
 
-4. Run the Application
-bash
+### 4. Run the Application
+
 ng serve
 Navigate to http://localhost:4200/
 
-🏗️ Project Structure
+### 🏗️ Project Structure
 text
 src/
 ├── app/
@@ -87,7 +90,8 @@ src/
 │   └── app.routes.ts           # Routing configuration
 ├── assets/                     # Static assets
 └── environments/               # Environment configurations
-🔧 Configuration
+
+### 🔧 Configuration
 Firebase Security Rules
 Add to your Firestore rules:
 
@@ -114,7 +118,7 @@ Reducers for state updates
 Selectors for data queries
 
 
-## **2. Create Environment Template Files**
+## Create Environment Template Files**
 
 Create `src/environments/environment.template.ts`:
 ```typescript
@@ -132,55 +136,4 @@ export const environment = {
     appId: "YOUR_APP_ID"
   }
 };
-3. Create .gitignore File
-Make sure your .gitignore includes:
 
-# See http://help.github.com/ignore-files/ for more about ignoring files.
-
-# compiled output
-/dist
-/tmp
-/out-tsc
-/browser
-
-# dependencies
-/node_modules
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# IDEs and editors
-/.idea
-.project
-.classpath
-.c9/
-*.launch
-.settings/
-*.sublime-workspace
-
-# IDE - VSCode
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-
-# environment files (don't commit your actual keys)
-/src/environments/environment.ts
-/src/environments/environment.prod.ts
-
-# misc
-/.sass-cache
-/connect.lock
-/coverage
-/libpeerconnection.log
-testem.log
-/typings
-
-# System Files
-.DS_Store
-Thumbs.db
-
-# Firebase
-.firebase/
-*-debug.log
