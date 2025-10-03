@@ -78,6 +78,7 @@ Navigate to http://localhost:4200/
 
 
 src/
+
 ├── app/
 │ ├── components/ # UI Components (TaskForm, TaskList)
 │ ├── models/ # Data models and TypeScript interfaces
