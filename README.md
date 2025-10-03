@@ -79,18 +79,31 @@ Navigate to http://localhost:4200/
 
 src/
 ├── app/
+
 │   ├── components/
-│   │   ├── task-form/          # Task creation/editing form
-│   │   └── task-list/          # Task display and management
-│   ├── models/                 # TypeScript interfaces
-│   ├── services/               # Firebase service layer
-│   ├── store/                  # NgRx state management
-│   │   └── task/               # Task-specific state
-│   ├── app.component.ts        # Root component
-│   ├── app.config.ts           # Application configuration
-│   └── app.routes.ts           # Routing configuration
-├── assets/                     # Static assets
-└── environments/               # Environment configurations
+
+│   │   ├── task-form/  
+
+│   │   └── task-list/ 
+
+│   ├── models/                
+
+│   ├── services/              
+
+│   ├── store/                 
+
+│   │   └── task/              
+
+│   ├── app.component.ts       
+
+│   ├── app.config.ts         
+
+│   └── app.routes.ts           
+
+├── assets/                    
+
+└── environments/             
+
 
 ### 🔧 Configuration
 Firebase Security Rules
