@@ -78,23 +78,34 @@ Navigate to http://localhost:4200/
 
 
 src/
-
 ├── app/
-
-│   ├── components/
-│   │   ├── task-form/  
-│   │   └── task-list/ 
-
-│   ├── models/                
-│   ├── services/              
-│   ├── store/                 
-│   │   └── task/              
-│   ├── app.component.ts       
-│   ├── app.config.ts         
-│   └── app.routes.ts           
-├── assets/                    
-└── environments/             
-
+│ ├── components/
+│ │ ├── task-form.component.ts
+│ │ ├── task-form.component.html
+│ │ ├── task-form.component.scss
+│ │ ├── task-list.component.ts
+│ │ ├── task-list.component.html
+│ │ └── task-list.component.scss
+│ ├── models/
+│ │ └── task.model.ts
+│ ├── services/
+│ │ └── task.service.ts
+│ ├── store/
+│ │ └── task/
+│ │ ├── task.actions.ts
+│ │ ├── task.effects.ts
+│ │ ├── task.reducer.ts
+│ │ └── task.selectors.ts
+│ ├── app.ts # Main app component
+│ ├── app.config.ts # Application configuration
+│ ├── app.routes.ts # Routing configuration
+│ ├── app.html # App template
+│ └── app.css # App styles
+├── assets/
+├── environments/
+│ ├── environment.template.ts
+│ └── (environment.ts - add your config)
+└── styles.css
 
 ### 🔧 Configuration
 Firebase Security Rules
