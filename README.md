@@ -79,33 +79,16 @@ Navigate to http://localhost:4200/
 
 src/
 ├── app/
-│ ├── components/
-│ │ ├── task-form.component.ts
-│ │ ├── task-form.component.html
-│ │ ├── task-form.component.scss
-│ │ ├── task-list.component.ts
-│ │ ├── task-list.component.html
-│ │ └── task-list.component.scss
-│ ├── models/
-│ │ └── task.model.ts
-│ ├── services/
-│ │ └── task.service.ts
-│ ├── store/
-│ │ └── task/
-│ │ ├── task.actions.ts
-│ │ ├── task.effects.ts
-│ │ ├── task.reducer.ts
-│ │ └── task.selectors.ts
-│ ├── app.ts # Main app component
-│ ├── app.config.ts # Application configuration
-│ ├── app.routes.ts # Routing configuration
-│ ├── app.html # App template
-│ └── app.css # App styles
-├── assets/
-├── environments/
-│ ├── environment.template.ts
-│ └── (environment.ts - add your config)
-└── styles.css
+│ ├── components/ # UI Components (TaskForm, TaskList)
+│ ├── models/ # Data models and TypeScript interfaces
+│ ├── services/ # Business logic and Firebase services
+│ ├── store/ # NgRx state management (actions, reducers, effects)
+│ ├── app.component.ts # Root application component
+│ ├── app.config.ts # Application configuration and providers
+│ └── app.routes.ts # Routing configuration
+├── assets/ # Static assets (images, icons)
+├── environments/ # Environment configurations
+└── styles/ # Global styles and themes
 
 ### 🔧 Configuration
 Firebase Security Rules
