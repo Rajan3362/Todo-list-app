@@ -1,12 +1,30 @@
-# Add the file to git
-git add .gitattributes
+# Enforce LF line endings for text files
+* text=auto eol=lf
 
-# Remove and re-add all files to apply line ending rules
-git rm --cached -r .
-git add .
+# TypeScript & JavaScript
+*.ts text eol=lf
+*.js text eol=lf
 
-# Commit the changes
-git commit -m "chore: add .gitattributes for consistent line endings"
+# HTML & CSS / SCSS
+*.html text eol=lf
+*.css text eol=lf
+*.scss text eol=lf
 
-# Push to GitHub
-git push origin main
+# Markdown & JSON
+*.md text eol=lf
+*.json text eol=lf
+
+# YAML
+*.yml text eol=lf
+*.yaml text eol=lf
+
+# Ignore binary files from normalization
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.pdf binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
