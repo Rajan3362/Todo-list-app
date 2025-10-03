@@ -1,0 +1,122 @@
+<div class="task-list-container">
+  <!-- Filters and Sort -->
+  <mat-card class="filters-card">
+    <mat-card-content>
+      <div class="filters-row">
+        <mat-form-field appearance="outline">
+          <mat-label>Category</mat-label>
+          <mat-select (selectionChange)="onFilterChange({ category: $event.value })">
+            <mat-option value="">All Categories</mat-option>
+            <mat-option *ngFor="let category of categories" [value]="category">
+              {{ category }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Status</mat-label>
+          <mat-select (selectionChange)="onFilterChange({ completed: $event.value })">
+            <mat-option value="">All Tasks</mat-option>
+            <mat-option [value]="false">Active</mat-option>
+            <mat-option [value]="true">Completed</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Priority</mat-label>
+          <mat-select (selectionChange)="onFilterChange({ priority: $event.value })">
+            <mat-option value="">All Priorities</mat-option>
+            <mat-option *ngFor="let priority of priorities" [value]="priority">
+              {{ priority | titlecase }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Sort By</mat-label>
+          <mat-select (selectionChange)="onSortChange($event.value)">
+            <mat-option value="createdAt">Date Created</mat-option>
+            <mat-option value="dueDate">Due Date</mat-option>
+            <mat-option value="priority">Priority</mat-option>
+            <mat-option value="title">Title</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <button mat-stroked-button color="basic" (click)="clearFilters()">
+          <mat-icon>clear</mat-icon>
+          Clear Filters
+        </button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+  <!-- Tasks List -->
+  <div class="tasks-container">
+    <mat-progress-bar 
+      *ngIf="loading$ | async" 
+      mode="indeterminate">
+    </mat-progress-bar>
+
+    <ng-container *ngIf="(tasks$ | async) as tasks">
+      <div *ngIf="tasks.length === 0" class="empty-state">
+        <mat-icon class="empty-icon">check_circle</mat-icon>
+        <h3>No tasks found</h3>
+        <p>Add a new task to get started!</p>
+      </div>
+
+      <mat-card *ngFor="let task of tasks" class="task-card" [class.completed]="task.completed" [attr.data-priority]="task.priority">
+        <mat-card-content>
+          <div class="task-content">
+            <div class="task-main">
+              <mat-checkbox
+                [checked]="task.completed"
+                (change)="toggleComplete(task)"
+                color="primary"
+                class="task-checkbox">
+              </mat-checkbox>
+              
+              <div class="task-details">
+                <h3 [class.completed-title]="task.completed" class="task-title">
+                  {{ task.title }}
+                </h3>
+                
+                <p *ngIf="task.description" class="task-description">
+                  {{ task.description }}
+                </p>
+                
+                <div class="task-meta">
+                  <mat-chip 
+                    [color]="getPriorityColor(task.priority)" 
+                    variant="outlined"
+                    class="priority-chip">
+                    {{ task.priority | titlecase }}
+                  </mat-chip>
+                  
+                  <span class="task-category">{{ task.category }}</span>
+                  
+                  <span *ngIf="task.dueDate" class="due-date">
+                    <mat-icon>schedule</mat-icon>
+                    {{ task.dueDate | date: 'mediumDate' }}
+                  </span>
+                  
+                  <span class="created-date">
+                    Created: {{ task.createdAt | date: 'medium' }}
+                  </span>
+                </div>
+              </div>
+            </div>
+            
+            <button 
+              mat-icon-button 
+              color="warn" 
+              (click)="onDeleteTask(task.id!)"
+              class="delete-button"
+              matTooltip="Delete task">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </ng-container>
+  </div>
+</div>
